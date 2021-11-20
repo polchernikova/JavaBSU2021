@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="student: ${students}"
+        th:text="|${student.name} from ${student.school}|"></li>
+</ul>
+
+<a href="/addstudent">Add new student</a>
+<a href="/">View all</a>
+
+</body>
+</html>

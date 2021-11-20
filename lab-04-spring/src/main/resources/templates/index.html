@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form action="/searchbyname" method="get">
+  <label>
+    Search by name:
+    <input type="text" name="query" />
+  </label>
+  <input type="submit" />
+</form>
+
+<form action="/searchbyschool" method="get">
+  <label>
+    Search by school:
+    <input type="number" name="query" />
+  </label>
+  <input type="submit" />
+</form>
+
+<ul>
+  <li th:each="student: ${students}"
+      th:text="|${student.name} from ${student.school}|"></li>
+</ul>
+
+<a href="/addstudent">Add new student</a>
+
+
+</body>
+</html>
