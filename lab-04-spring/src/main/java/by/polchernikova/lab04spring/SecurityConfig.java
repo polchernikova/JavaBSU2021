@@ -22,6 +22,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll()
                 .disable().cors();
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/addclassroom").hasRole("ADMIN")
+                .and()
+                .formLogin()
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll()
+                .disable().cors();
     }
 
     @Bean

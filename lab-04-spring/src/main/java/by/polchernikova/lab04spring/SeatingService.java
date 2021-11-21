@@ -8,4 +8,7 @@ public class SeatingService {
     @Autowired
     StudentRepository students;
 
+    public void makeSeating() {
+        students.findAll();
+    }
 }

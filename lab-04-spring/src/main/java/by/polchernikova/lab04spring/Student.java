@@ -1,10 +1,9 @@
 package by.polchernikova.lab04spring;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -14,4 +13,8 @@ public class Student {
     Long id;
     String name;
     String school;
+
+    @ManyToOne
+    @JoinColumn(name = "classroom")
+    Classroom classroom;
 }
