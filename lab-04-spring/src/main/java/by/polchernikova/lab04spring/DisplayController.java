@@ -13,8 +13,8 @@ public class DisplayController {
     StudentRepository students;
 
     @GetMapping("/seating")
-    public Iterable<Student> displaySeating() {
-        return students.findAll();
+    public String displaySeating() {
+        return "displayer";
     }
 
      // потом объединить эти два в один как-нибудь по-умному
@@ -28,7 +28,7 @@ public class DisplayController {
 
     @GetMapping("/searchbyschool")
     public String displaySeatBySchool(Model model,
-                                      @RequestParam(value="query", required = true) Integer query) {
+                                      @RequestParam(value="query", required = true) String query) {
         Iterable<Student> schoolmates = students.findAllBySchool(query);
         model.addAttribute("students", schoolmates);
         return "displayer";

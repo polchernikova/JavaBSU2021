@@ -7,12 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.awt.*;
-
 @Controller
 public class StudentAdditionController {
     @Autowired
     StudentRepository students;
+
+    @Autowired
+    SeatingService seatingService;
 
     @GetMapping("/")
     public String index(Model model) {
