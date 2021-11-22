@@ -18,4 +18,12 @@ public class Student {
     @JoinColumn(name = "classroom")
     Classroom classroom;
     Integer place;
+
+    public String getDescription() {
+        return name + " from " + school + " in classroom " + classroom.getNumber().toString() + " in place " + place.toString();
+    }
+
+    public String getPartialDescription() {
+        return name + " from " + school;
+    }
 }

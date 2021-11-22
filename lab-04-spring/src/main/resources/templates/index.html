@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
   <title>Title</title>
 </head>
 <body>
@@ -22,10 +27,13 @@
   <input type="submit" />
 </form>
 
-<ul>
-  <li th:each="student: ${students}"
-      th:text="|${student.name} from ${student.school} in classroom ${student.place}|"></li>
-</ul>
+<table th:each="classroom : ${classrooms}">
+  <tr th:each="row: ${classroom}">
+    <td th:each="student: ${row}" th:text="${student == null} ? '' : ${student.getPartialDescription()} "/>
+  </tr>
+</table>
+
+
 
 <a href="/addstudent">Add new student</a>
 <a href="/addclassroom">Add new classroom</a>

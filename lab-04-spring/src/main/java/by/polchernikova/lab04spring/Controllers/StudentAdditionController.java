@@ -17,14 +17,16 @@ public class StudentAdditionController {
     StudentRepository students;
 
     @Autowired
-    SeatingService seatingService;
+    ClassroomRepository classrooms;
 
     @Autowired
-    ClassroomRepository classroomRepository;
+    SeatingService seatingService;
+
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("students", students.findAll());
+        model.addAttribute("classrooms", seatingService.prepareDataForDisplaying());
         return "index";
     }
 

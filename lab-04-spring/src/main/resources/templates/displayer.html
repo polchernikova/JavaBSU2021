@@ -8,7 +8,7 @@
 
 <ul>
     <li th:each="student: ${students}"
-        th:text="|${student.name} from ${student.school} in classroom ${student.place}|"></li>
+        th:text="|${student.getDescription()}"></li>
 </ul>
 
 <a href="/addstudent">Add new student</a>
