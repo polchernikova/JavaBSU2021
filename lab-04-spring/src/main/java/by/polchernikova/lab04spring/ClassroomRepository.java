@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClassroomRepository extends CrudRepository<Classroom, Long> {
+    Classroom findByNumber(Integer number);
 }

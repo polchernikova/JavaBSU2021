@@ -24,7 +24,7 @@
 
 <ul>
   <li th:each="student: ${students}"
-      th:text="|${student.name} from ${student.school}|"></li>
+      th:text="|${student.name} from ${student.school} in classroom ${student.place}|"></li>
 </ul>
 
 <a href="/addstudent">Add new student</a>

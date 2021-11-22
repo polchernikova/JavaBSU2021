@@ -1,6 +1,5 @@
 package by.polchernikova.lab04spring;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,4 +16,5 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "classroom")
     Classroom classroom;
+    Integer place;
 }
