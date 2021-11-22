@@ -1,5 +1,6 @@
-package by.polchernikova.lab04spring;
+package by.polchernikova.lab04spring.Model;
 
+import by.polchernikova.lab04spring.Model.Classroom;
 import lombok.Data;
 
 import javax.persistence.*;

@@ -1,5 +1,7 @@
-package by.polchernikova.lab04spring;
+package by.polchernikova.lab04spring.Controllers;
 
+import by.polchernikova.lab04spring.Repozitories.ClassroomRepository;
+import by.polchernikova.lab04spring.Model.Classroom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;

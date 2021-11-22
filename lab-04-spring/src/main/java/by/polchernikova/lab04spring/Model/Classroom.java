@@ -1,8 +1,6 @@
-package by.polchernikova.lab04spring;
+package by.polchernikova.lab04spring.Model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
