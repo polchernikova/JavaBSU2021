@@ -14,6 +14,6 @@ import java.util.List;
 public class Classroom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    Integer number;
+    private Long id;
+    private Integer number;
 }

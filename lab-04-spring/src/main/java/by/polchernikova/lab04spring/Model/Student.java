@@ -10,14 +10,14 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    String school;
+    private Long id;
+    private String name;
+    private String school;
 
     @ManyToOne
     @JoinColumn(name = "classroom")
-    Classroom classroom;
-    Integer place;
+    private Classroom classroom;
+    private Integer place;
 
     public String getDescription() {
         return name + " from " + school + " in classroom " + classroom.getNumber().toString() + " in place " + place.toString();
