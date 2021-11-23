@@ -28,7 +28,10 @@
 </form>
 
 <table th:each="classroom : ${classrooms}">
-  <tr th:each="row: ${classroom}">
+  <tr>
+    <td colspan="6" style="text-align:center" th:text="${classroom.getFirst()}"/>
+  </tr>
+  <tr th:each="row: ${classroom.getSecond()}">
     <td th:each="student: ${row}" th:text="${student == null} ? '' : ${student.getPartialDescription()} "/>
   </tr>
 </table>

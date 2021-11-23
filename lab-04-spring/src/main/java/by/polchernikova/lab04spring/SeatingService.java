@@ -5,6 +5,7 @@ import by.polchernikova.lab04spring.Model.Student;
 import by.polchernikova.lab04spring.Repozitories.ClassroomRepository;
 import by.polchernikova.lab04spring.Repozitories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Array;
@@ -21,8 +22,8 @@ public class SeatingService {
     @Autowired
     ClassroomRepository classrooms;
 
-    public ArrayList<ArrayList<ArrayList<Student>>> prepareDataForDisplaying() {
-        ArrayList<ArrayList<ArrayList<Student>>> data = new ArrayList<>();
+    public ArrayList<Pair<Integer, ArrayList<ArrayList<Student>>>> prepareDataForDisplaying() {
+        ArrayList<Pair<Integer, ArrayList<ArrayList<Student>>>> data = new ArrayList<>();
         List<Classroom> classes = new ArrayList<>();
         classrooms.findAll().forEach(classroom -> classes.add(classroom));
         for(int i = 0; i < classes.size(); i++) {
@@ -34,7 +35,7 @@ public class SeatingService {
                 }
                 classroom.add(row);
             }
-            data.add(classroom);
+            data.add(Pair.of(classes.get(i).getNumber(), classroom));
         }
         for(int i = 0; i < classes.size(); i++) {
             Classroom classroom = classes.get(i);
@@ -43,7 +44,7 @@ public class SeatingService {
                 Integer place = st.getPlace();
                 Integer row = place / 6;
                 Integer placeInRow = place % 6;
-                data.get(classroom.getNumber()).get(row).set(placeInRow, st);
+                data.get(i).getSecond().get(row).set(placeInRow, st);
             }
         }
         return data;
