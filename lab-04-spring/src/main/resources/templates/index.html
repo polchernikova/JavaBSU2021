@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <style>
-    table, th, td {
-      border: 1px solid black;
-    }
-  </style>
   <title>Title</title>
+  <link th:href="@{/styles/main.css}" rel="stylesheet" />
 </head>
 <body>
 
 <form action="/searchbyname" method="get">
   <label>
-    Search by name:
+    <h1>Search by name</h1>
     <input type="text" name="query" />
   </label>
   <input type="submit" />
@@ -21,7 +17,7 @@
 
 <form action="/searchbyschool" method="get">
   <label>
-    Search by school:
+    <h1>Search by school</h1>
     <input type="text" name="query" />
   </label>
   <input type="submit" />
@@ -29,11 +25,10 @@
 
 <table th:each="classroom : ${classrooms}">
   <tr>
-    <td colspan="3" style="text-align:center" th:text="${classroom.getFirst()}"></td>
+    <th colspan="3" style="text-align:center" th:text="${classroom.getFirst()}"></th>
   </tr>
   <tr th:each="row: ${classroom.getSecond()}">
     <td  th:each="desk: ${row}"> <b style="white-space: pre-line" th:each="student: ${desk}" th:text="${student == null} ? '' : |${student.getPartialDescription()} |" />  </td>
-<!--    <td th:each="student: ${row}" th:text="${student == null} ? '' : ${student.getPartialDescription()} "/>-->
   </tr>
 </table>
 

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
 </head>
 <body>
 
 <form action="/addclassroom" method="POST">
     <label>
-        Classroom number:
+        <h1>Classroom number:</h1>
         <input type="text" name="number" />
     </label>
     <input type="submit" />
 </form>
 
 <a href="/">View seating</a>
-<a href="/"></a>
 
 </body>
 </html>

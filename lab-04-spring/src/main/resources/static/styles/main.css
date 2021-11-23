@@ -1,0 +1,121 @@
+{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #525d6e;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #525d6e;
+    color: white;
+}
+
+table {
+    width:40%;
+    margin-left:30%;
+    margin-right:30%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+input[type=text], select {
+    width:20%;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding: 12px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    background-color: #525d6e;
+    color: #ffffff;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width:20%;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-weight: bolder;
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: #525d6e;
+    color: #ffffff;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width:20%;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-weight: bolder;
+    border: none;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #525d6e;
+    padding: 20px;
+}
+
+a:link, a:visited {
+    background-color: #525d6e;
+    color: #ffffff;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width:20%;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+a:hover, a:active {
+    background-color: #525d6e;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+ul {
+    width:30%;
+    margin-left:35%;
+    margin-right:35%;
+    border-left: #303946;
+    background-color: #f1f1f1;
+    list-style-type: none;
+    padding: 10px 20px;
+    font-size: medium;
+    font-weight: bolder;
+}
