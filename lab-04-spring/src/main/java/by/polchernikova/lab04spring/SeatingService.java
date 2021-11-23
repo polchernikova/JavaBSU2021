@@ -22,16 +22,20 @@ public class SeatingService {
     @Autowired
     ClassroomRepository classrooms;
 
-    public ArrayList<Pair<Integer, ArrayList<ArrayList<Student>>>> prepareDataForDisplaying() {
-        ArrayList<Pair<Integer, ArrayList<ArrayList<Student>>>> data = new ArrayList<>();
+    public ArrayList<Pair<Integer, ArrayList<ArrayList<ArrayList<Student>>>>> prepareDataForDisplaying() {
+        ArrayList<Pair<Integer, ArrayList<ArrayList<ArrayList<Student>>>>> data = new ArrayList<>();
         List<Classroom> classes = new ArrayList<>();
         classrooms.findAll().forEach(classroom -> classes.add(classroom));
         for(int i = 0; i < classes.size(); i++) {
-            ArrayList<ArrayList<Student>> classroom = new ArrayList<ArrayList<Student>>();
+            ArrayList<ArrayList<ArrayList<Student>>> classroom = new ArrayList<>();
             for(int j = 0; j < 5; j++) {
-                ArrayList<Student> row = new ArrayList<>();
-                for(int k = 0; k < 6; k++) {
-                    row.add(null);
+                ArrayList<ArrayList<Student>> row = new ArrayList<>();
+                for(int k = 0; k < 3; k++) {
+                    ArrayList<Student> desk = new ArrayList<>();
+                    for(int l = 0; l < 2; l++) {
+                        desk.add(null);
+                    }
+                    row.add(desk);
                 }
                 classroom.add(row);
             }
@@ -44,7 +48,9 @@ public class SeatingService {
                 Integer place = st.getPlace();
                 Integer row = place / 6;
                 Integer placeInRow = place % 6;
-                data.get(i).getSecond().get(row).set(placeInRow, st);
+                Integer desk = placeInRow / 2;
+                Integer placeOnADesk = placeInRow % 2;
+                data.get(i).getSecond().get(row).get(desk).set(placeOnADesk, st);
             }
         }
         return data;

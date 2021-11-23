@@ -29,10 +29,11 @@
 
 <table th:each="classroom : ${classrooms}">
   <tr>
-    <td colspan="6" style="text-align:center" th:text="${classroom.getFirst()}"/>
+    <td colspan="3" style="text-align:center" th:text="${classroom.getFirst()}"></td>
   </tr>
   <tr th:each="row: ${classroom.getSecond()}">
-    <td th:each="student: ${row}" th:text="${student == null} ? '' : ${student.getPartialDescription()} "/>
+    <td  th:each="desk: ${row}"> <b style="white-space: pre-line" th:each="student: ${desk}" th:text="${student == null} ? '' : |${student.getPartialDescription()} |" />  </td>
+<!--    <td th:each="student: ${row}" th:text="${student == null} ? '' : ${student.getPartialDescription()} "/>-->
   </tr>
 </table>
 

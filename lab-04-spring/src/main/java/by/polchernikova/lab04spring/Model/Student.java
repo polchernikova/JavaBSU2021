@@ -20,10 +20,10 @@ public class Student {
     private Integer place;
 
     public String getDescription() {
-        return name + " from " + school + " in classroom " + classroom.getNumber().toString() + " in place " + place.toString();
+        return name + " from " + school + " in classroom " + classroom.getNumber().toString() + " in place " + place.toString() + "\n";
     }
 
     public String getPartialDescription() {
-        return name + " from " + school;
+        return name + " from " + school + "\n";
     }
 }
